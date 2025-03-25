@@ -3,28 +3,39 @@ dotenv.config();
 import express from 'express';
 import cors from 'cors';
 import connectDB from './config/connectdb.js';
-import userRoutes from "./routes/userRoutes.js"
-import taskRoutes from "./routes/taskRoutes.js"
+import userRoutes from "./routes/userRoutes.js";
+import taskRoutes from "./routes/taskRoutes.js";
+import path from "path";
+import { fileURLToPath } from 'url';
 
+// Fix for __dirname in ES module
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-const app=express();
-const port=process.env.PORT || 3000;
-const DATABASE_URL=process.env.DATABASE_URL;
+const app = express();
+const port = process.env.PORT || 3000;
+const DATABASE_URL = process.env.DATABASE_URL;
 
-//cors Policy
+// CORS Policy
 app.use(cors());
 
-//Database Connection
+// Database Connection
 connectDB(DATABASE_URL);
-//Json
+app.use(express.static(path.join(__dirname, '..', 'frontend', 'dist')));
+
+// JSON Middleware
 app.use(express.json());
-app.use(express.urlencoded({extended:true}));
+app.use(express.urlencoded({ extended: true }));
 
 // Load Routes
-app.use('/api/user',userRoutes);
+app.use('/api/user', userRoutes);
+app.use('/api/task', taskRoutes);
 
-app.use('/api/task',taskRoutes);
+// Serve frontend
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'frontend', 'dist', 'index.html'));
+});
 
-app.listen(port ,()=>{
+app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
-})
+});
