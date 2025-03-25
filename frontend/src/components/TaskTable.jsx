@@ -24,7 +24,7 @@ const TaskTable = () => {
         }
 
         // Fetch the logged-in user
-        const userResponse = await axios.get("http://localhost:8000/api/user/loggeduser", {
+        const userResponse = await axios.get("/api/user/loggeduser", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -32,7 +32,7 @@ const TaskTable = () => {
         setUser(loggedUser); // Store user in context
 
         // Fetch tasks for the logged-in user
-        const taskResponse = await axios.get("http://localhost:8000/api/task", {
+        const taskResponse = await axios.get("/api/task", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -66,7 +66,7 @@ const TaskTable = () => {
   const handleCreateTask = async () => {
     try {
       await axios.post(
-        "http://localhost:8000/api/task",
+        "/api/task",
         newTask,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -92,7 +92,7 @@ const TaskTable = () => {
   // Handle update task
   const handleUpdateTask = async () => {
     try {
-      await axios.put(`http://localhost:8000/api/task/${editingTaskId}`, editedTask, {
+      await axios.put(`/api/task/${editingTaskId}`, editedTask, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -106,7 +106,7 @@ const TaskTable = () => {
   // Handle delete task
   const handleDeleteTask = async (taskId) => {
     try {
-      await axios.delete(`http://localhost:8000/api/task/${taskId}`, {
+      await axios.delete(`/api/task/${taskId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
