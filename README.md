@@ -212,6 +212,30 @@ Authorization: Bearer <your_token>
 }
 ```
 
+## UI Screenshots
+
+### **Home Page**
+![Home](https://github.com/simhadri-bharath/Taskly/blob/main/frontend/src/assets/home.png)
+
+
+### **Login Page**
+![Login](https://github.com/simhadri-bharath/Taskly/blob/main/frontend/src/assets/login.png)
+
+### **Navbar**
+![Navbar](https://github.com/simhadri-bharath/Taskly/blob/main/frontend/src/assets/navbar.png)
+
+### **Register Page**
+![Register](https://github.com/simhadri-bharath/Taskly/blob/main/frontend/src/assets/register.png)
+
+### **Task Creation**
+![Task Creation](https://github.com/simhadri-bharath/Taskly/blob/main/frontend/src/assets/taskCreation.png)
+
+### **Task Panel**
+![Task Panel](https://github.com/simhadri-bharath/Taskly/blob/main/frontend/src/assets/taskPanel.png)
+
+### **Update Task**
+![Update Task](https://github.com/simhadri-bharath/Taskly/blob/main/frontend/src/assets/updateTask.png)
+
 ---
 
 ## Live URL
