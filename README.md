@@ -231,6 +231,32 @@ Authorization: Bearer <your_token>
   curl -X GET "http://localhost:8000/api/task" -H "Authorization: Bearer your_jwt_token"
   ```
 
+---
+
+## UI Screenshots
+
+### **Home Page**
+![Home](https://github.com/simhadri-bharath/Taskly/blob/main/frontend/src/assets/home.png)
+
+
+### **Login Page**
+![Login](https://github.com/simhadri-bharath/Taskly/blob/main/frontend/src/assets/login.png)
+
+### **Navbar**
+![Navbar](https://github.com/simhadri-bharath/Taskly/blob/main/frontend/src/assets/navbar.png)
+
+### **Register Page**
+![Register](https://github.com/simhadri-bharath/Taskly/blob/main/frontend/src/assets/register.png)
+
+### **Task Creation**
+![Task Creation](https://github.com/simhadri-bharath/Taskly/blob/main/frontend/src/assets/taskCreation.png)
+
+### **Task Panel**
+![Task Panel](https://github.com/simhadri-bharath/Taskly/blob/main/frontend/src/assets/taskPanel.png)
+
+### **Update Task**
+![Update Task](https://github.com/simhadri-bharath/Taskly/blob/main/frontend/src/assets/updateTask.png)
+
 ## Author
 **Simhadri Bharath**
 
