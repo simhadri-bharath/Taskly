@@ -1,7 +1,17 @@
-# Task Management API
+# Taskly (Task Management API)
+
+## Live URL
+[Taskly (Task Management App)](https://taskly-pgf7.onrender.com/) - (https://taskly-pgf7.onrender.com/)
+
+**⚠ Warning:** This application is deployed on Render. Please wait for some time if the server is inactive.
 
 ## Overview
-This API allows users to manage their tasks, including creating, updating, retrieving, and deleting tasks. User authentication is required for most operations, using JWT tokens.
+Taskly allows users to manage their tasks, including creating, updating, retrieving, and deleting tasks. User authentication is required for most operations, using JWT tokens.
+
+## Tech Stack
+- **Frontend:** React.js, Tailwind CSS
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB
 
 ## Installation Steps and Setup Instructions
 ### Prerequisites:
@@ -11,8 +21,8 @@ This API allows users to manage their tasks, including creating, updating, retri
 ### Steps to Set Up the Project:
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo/task-management-api.git
-   cd task-management-api
+   git clone https://github.com/simhadri-bharath/Taskly
+   cd taskly
    ```
 2. Install dependencies:
    ```bash
@@ -111,55 +121,9 @@ Authorization: Bearer <your_token>
 }
 ```
 
-#### **Change Password**
-- **URL:** `/user/changePassword`
-- **Method:** `POST`
-- **Authentication:** **Protected** (JWT required)
-- **Request Body:**
-```json
-{
-  "password": "newpassword",
-  "password_confirmation": "newpassword"
-}
-```
-- **Response:**
-```json
-{
-  "status": "success",
-  "message": "Password changed successfully"
-}
-```
-
 ---
 
-### **Task Management**
-
-#### **Get All Tasks**
-- **URL:** `/task`
-- **Method:** `GET`
-- **Authentication:** **Protected** (JWT required)
-- **Headers:**
-```json
-{
-  "Authorization": "Bearer your_jwt_token"
-}
-```
-- **Response:**
-```json
-[
-  {
-    "_id": "67e2841ced7cd525c1738afb",
-    "title": "do work smartly",
-    "description": "consistency is key to success",
-    "completed": false,
-    "user": {
-      "_id": "67c6893849daf578dca351d0",
-      "name": "user1",
-      "email": "user1@example.com"
-    }
-  }
-]
-```
+### **Taskly Management**
 
 #### **Create a New Task**
 - **URL:** `/task`
@@ -184,6 +148,33 @@ Authorization: Bearer <your_token>
 }
 ```
 
+#### **Get All Tasks**
+- **URL:** `/task`
+- **Method:** `GET`
+- **Authentication:** **Protected** (JWT required)
+- **Headers:**
+```json
+{
+  "Authorization": "Bearer your_jwt_token"
+}
+```
+- **Response:**
+```json
+[
+  {
+    "_id": "67e2841ced7cd525c1738afb",
+    "title": "do work smartly",
+    "description": "consistency is the key to success",
+    "completed": false,
+    "user": {
+      "_id": "67c6893849daf578dca351d0",
+      "name": "user1",
+      "email": "user1@example.com"
+    }
+  }
+]
+```
+
 #### **Update a Task**
 - **URL:** `/task/:id`
 - **Method:** `PUT`
@@ -191,7 +182,16 @@ Authorization: Bearer <your_token>
 - **Request Body:**
 ```json
 {
-  "completed": true
+  "_id": "67e2841ced7cd525c1738afb",
+  "title": "do work smartly",
+  "description": "consistency is the key to success",
+  "completed": false,
+  "user": {
+    "_id": "67c6893849daf578dca351d0",
+    "name": "user1",
+    "email": "user1@example.com"
+  },
+  "__v": 0
 }
 ```
 - **Response:**
@@ -214,51 +214,15 @@ Authorization: Bearer <your_token>
 
 ---
 
-## Testing the API with Postman or cURL
+## Live URL
+[Taskly (Task Management App)](https://taskly-pgf7.onrender.com/) - (https://taskly-pgf7.onrender.com/)
 
-### Using Postman:
-1. Import the provided Postman collection (thunder-collection_postman_JwtAuthUser.json).
-2. Update the `Authorization` header in requests with a valid JWT token.
-3. Use the predefined endpoints to test the API.
-
-### Using cURL:
-- **Login User:**
-  ```sh
-  curl -X POST "http://localhost:8000/api/user/login" -H "Content-Type: application/json" -d '{ "email": "user1@example.com", "password": "user1" }'
-  ```
-- **Get Tasks:**
-  ```sh
-  curl -X GET "http://localhost:8000/api/task" -H "Authorization: Bearer your_jwt_token"
-  ```
-
----
-
-## UI Screenshots
-
-### **Home Page**
-![Home](https://github.com/simhadri-bharath/Taskly/blob/main/frontend/src/assets/home.png)
-
-
-### **Login Page**
-![Login](https://github.com/simhadri-bharath/Taskly/blob/main/frontend/src/assets/login.png)
-
-### **Navbar**
-![Navbar](https://github.com/simhadri-bharath/Taskly/blob/main/frontend/src/assets/navbar.png)
-
-### **Register Page**
-![Register](https://github.com/simhadri-bharath/Taskly/blob/main/frontend/src/assets/register.png)
-
-### **Task Creation**
-![Task Creation](https://github.com/simhadri-bharath/Taskly/blob/main/frontend/src/assets/taskCreation.png)
-
-### **Task Panel**
-![Task Panel](https://github.com/simhadri-bharath/Taskly/blob/main/frontend/src/assets/taskPanel.png)
-
-### **Update Task**
-![Update Task](https://github.com/simhadri-bharath/Taskly/blob/main/frontend/src/assets/updateTask.png)
+**⚠ Warning:** This application is deployed on Render. Please wait for some time if the server is inactive.
 
 ## Author
-**Simhadri Bharath**
+**Simhadri Bharath**  
+**Email:** simhadribharath2004@gmail.com  
+**Phone:** 9550934974  
 
 ---
 
