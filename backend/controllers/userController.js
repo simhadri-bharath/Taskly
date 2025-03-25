@@ -6,7 +6,7 @@ class userController {
     static userRegistration = async (req, res) => {
         const { name, email, password, password_confirmation, tc } = req.body;
 
-        const user = await UserModel.findOne({ emai: email });
+        const user = await UserModel.findOne({ email: email });
         if (user) {
             res.send({ "status": "failed", "message": "User already exists" });
         } else {
