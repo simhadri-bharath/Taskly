@@ -41,8 +41,14 @@ const Register = () => {
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-900">
-            <div className="bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-md">
-                <h2 className="text-xl font-bold text-white mb-4">Register</h2>
+            <div className="bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-md relative">
+                
+                {/* Home Button */}
+                <Link to="/" className="absolute top-2 right-4 text-blue-500 hover:underline">
+                    Home
+                </Link>
+
+                <h2 className="text-xl font-bold text-white mb-4 text-center">Register</h2>
                 <form onSubmit={submitHandler}>
                     {/* Name Field */}
                     <div className="mb-3">
@@ -108,7 +114,7 @@ const Register = () => {
                 </form>
 
                 {/* Redirect to Login Page */}
-                <p className="text-gray-400 text-sm mt-3">
+                <p className="text-gray-400 text-sm mt-3 text-center">
                     Already have an Account? 
                     <Link to='/login' className="text-blue-500 hover:underline"> Login</Link>
                 </p>
